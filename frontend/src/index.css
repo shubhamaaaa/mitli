@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-slide {
+    animation: slide 2s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
+  }
+
+
+
+  /* Smooth transition for sidebar */
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hide scrollbar for sidebar */
+.overflow-y-auto {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+  
