@@ -97,8 +97,8 @@ const Placeorder = () => {
       toast.error("Please enter a referral code to get a discount.");
       return;
     }
-    setReferralDiscount(50);
-    toast.success(`Referral code applied! You saved ₹50`);
+    setReferralDiscount(1800);
+    toast.success(`Referral code applied! You saved ₹1800`);
   };
 
   const initPay = (order, userId) => {
