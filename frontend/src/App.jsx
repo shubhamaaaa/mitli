@@ -15,6 +15,12 @@ import Orders from './pages/Orders'
 import ResetPassword from './pages/ResetPassword'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
+import CustomerSupport from './pages/CustomerSupport'
+import ShippingPolicy from './pages/ShippingPolicy'
+import Terms from './pages/Terms'
+import WhatsAppChatButton from './components/WhatsAppChatButton'
 
 const App = () => {
   return (
@@ -33,8 +39,14 @@ const App = () => {
         <Route path="/reset-password/:token" element={<ResetPassword/>} />
         <Route path='/placeorder' element={<Placeorder/>}/>
         <Route path='/orders' element={<Orders/>}/>
+        <Route path='/privacy' element={<PrivacyPolicy/>}/>
+        <Route path='/refund' element={<RefundPolicy/>}/>
+        <Route path='/customer' element={<CustomerSupport/>}/>
+        <Route path='/shipping' element={<ShippingPolicy/>}/>
+        <Route path='/term' element={<Terms/>}/>
         </Routes>
         <Footer/>
+        <WhatsAppChatButton/>
     </div>
   )
 }

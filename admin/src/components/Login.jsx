@@ -3,6 +3,7 @@ import axios from "axios";
 import { backendUrl } from "../App";
 import { toast } from "react-toastify";
 import { FiLock, FiMail } from "react-icons/fi";
+import { assets } from "../assets/assets";
 
 
 const Login = ({ setToken }) => {
@@ -34,7 +35,7 @@ const Login = ({ setToken }) => {
       <div className="w-full max-w-3xl flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden border border-gray-300">
        
         <div className="hidden md:block md:w-1/2 h-[500px]">
-          <img src='https://mitli.in/uploads/products/WhatsApp%20Image%202024-12-18%20at%2016_158img.21' alt="Illustration" className="w-full h-full object-cover" />
+          <img src={assets.Login} alt="Illustration" className="w-full h-full object-cover" />
         </div>
 
        
@@ -42,7 +43,7 @@ const Login = ({ setToken }) => {
          
           <div className="flex justify-center mb-6">
             <img
-              src="https://mitli.in/uploads/logo/Mitli%20Enterprises%20Private%20Limited%20Logo_8608.png"
+              src={assets.MITLIFINALLOGO}
               alt="Logo"
               className="w-32"
             />

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { FaTrash, FaMinus, FaPlus } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
@@ -12,6 +12,11 @@ const CartPage = () => {
         updateCartItemQuantity, 
         removeFromCart 
     } = useContext(ShopContext);
+
+     const [cartProducts, setCartProducts] = useState([]);
+    const [subtotal, setSubtotal] = useState(0);
+    const [gst, setGst] = useState(0);
+    const [total, setTotal] = useState(0);
 
     const getCartProducts = () => {
         if (!cartItems || typeof cartItems !== 'object') return [];
@@ -27,17 +32,24 @@ const CartPage = () => {
         }).filter(Boolean);
     };
 
-    const cartProducts = getCartProducts();
-
-    const getCartAmount = () => {
-        return cartProducts.reduce((total, product) => {
-            return total + ((product.discountedprice ?? 0) * product.quantity);
-        }, 0);
-    };
-
-    const subtotal = getCartAmount();
-    const total = subtotal + (delivery_fee ?? 0);
-
+     useEffect(() => {
+       const updatedCartProducts = getCartProducts();
+       setCartProducts(updatedCartProducts);
+   
+       // Calculate subtotal
+       const newSubtotal = updatedCartProducts.reduce((total, product) => {
+         return total + ((product.discountedprice ?? 0) * (product.quantity ?? 1));
+       }, 0);
+       setSubtotal(newSubtotal);
+   
+       // Calculate GST (12% of subtotal)
+       const newGst = Math.round(newSubtotal * 0.12);
+       setGst(newGst);
+       
+       // Calculate total (subtotal + GST + delivery fee)
+       setTotal(newSubtotal + newGst + (delivery_fee ?? 0));
+     }, [cartItems, products]); // Runs when cart changes
+     
     return (
         <div className="container mx-auto mt-10 px-4 lg:px-0">
             <h1 className="text-4xl font-bold text-center mb-10 text-[#6F4D38] ">Your Shopping Cart</h1>
@@ -93,15 +105,15 @@ const CartPage = () => {
                         <p className="text-gray-800">{currency}{subtotal.toFixed(2)}</p>
                     </div>
                     <div className="flex justify-between mb-3 text-lg">
-                        <p className="text-gray-600">Shipping Fee</p>
-                        <p className="text-gray-800">{currency}{(delivery_fee ?? 0).toFixed(2)}</p>
+                        <p className="text-gray-600">GST</p>
+                        <p className="text-lg text-gray-800">{currency}{(gst ?? 0).toFixed(2)}</p>
                     </div>
                     <hr className="my-3 border-gray-200" />
                     <div className="flex justify-between text-xl font-bold">
                         <p className="text-gray-800">Total</p>
                         <p className="text-gray-800">{currency}{total.toFixed(2)}</p>
                     </div>
-                   <NavLink to='/placeorder'><button className="w-full mt-6 py-3 bg-[#6F4D38]  text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105">
+                   <NavLink to='/placeorder'><button className="w-full cursor-pointer mt-6 py-3 bg-[#6F4D38]  text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105">
                         Proceed to Checkout
                     </button></NavLink> 
                 </div>

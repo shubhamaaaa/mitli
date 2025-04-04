@@ -62,7 +62,7 @@ const SignUp = () => {
           <div className="flex justify-center">
             <img
               className="w-16 h-16"
-              src="https://mitli.in/uploads/logo/Mitli%20Enterprises%20Private%20Limited%20Logo_8608.png"
+              src={assets.MITLIFINALLOGO}
               alt="Company Logo"
             />
           </div>

@@ -1,17 +1,18 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const Navbar = ({ setToken }) => {
     const location = useLocation();
     const isHome = location.pathname === "/";
   return (
     <nav className={`w-full shadow-md z-50 ${isHome ? "absolute top-0" : ""}`}>
-    <div className="flex items-center justify-between py-4 px-6 bg-white shadow-lg border-b border-gray-200">
+    <div className="flex items-center justify-between py-1 px-6 bg-white shadow-lg border-b border-gray-200">
       {/* Logo */}
       <a href="/" className="flex items-center">
         <img
-          className="w-[max(12%,90px)] sm:w-[120px] h-auto transition-transform transform hover:scale-105"
-          src="https://mitli.in/uploads/logo/Mitli%20Enterprises%20Private%20Limited%20Logo_8608.png"
+          className="w-[max(12%,90px)] sm:w-[100px] h-auto transition-transform transform hover:scale-105"
+          src={assets.MITLIFINALLOGO}
           alt="Moody Logo"
         />
       </a>

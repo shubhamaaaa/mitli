@@ -11,6 +11,8 @@ const Placeorder = () => {
   const [referralCode, setReferralCode] = useState(""); // Referral code from localStorage (if any)
   const [referralDiscount, setReferralDiscount] = useState(0); // Initially 0, will be set to 50 if referral code exists
   const [totalAfterDiscount, setTotalAfterDiscount] = useState(null);
+  const [gst, setGst] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const {
     navigate,
@@ -23,7 +25,7 @@ const Placeorder = () => {
   } = useContext(ShopContext);
 
   // Calculate cart total (subtotal + delivery fee)
-  const cartTotal = getCartAmount() + delivery_fee;
+  const cartTotal = getCartAmount() + gst;
 
   // Billing address form state
   const [formData, setFormData] = useState({
@@ -47,10 +49,19 @@ const Placeorder = () => {
     }
   }, []);
 
+  
+
   // Recalculate final total whenever cartTotal, coupon discount, or referral discount changes
   useEffect(() => {
     const newTotal = cartTotal - discount - referralDiscount;
     setTotalAfterDiscount(newTotal);
+
+    const newtotalamount = getCartAmount();
+    const newGst = Math.round(newtotalamount * 0.12);
+    setGst(newGst);
+    console.log(gst);
+  
+
   }, [cartTotal, discount, referralDiscount]);
 
   const onChangeHandler = (event) => {
@@ -506,8 +517,8 @@ const Placeorder = () => {
               <p className="font-medium text-gray-800">₹{getCartAmount()}</p>
             </div>
             <div className="flex justify-between items-center">
-              <p>Delivery Fee</p>
-              <p className="font-medium text-gray-800">₹{delivery_fee}</p>
+              <p>GST</p>
+              <p className="font-medium text-gray-800">₹{gst}</p>
             </div>
             {discount > 0 && (
               <div className="flex justify-between items-center text-green-600">
@@ -534,7 +545,7 @@ const Placeorder = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-black text-white px-16 py-3 text-sm rounded-lg hover:bg-gray-800 transition-all transform hover:scale-105 active:scale-95 mt-6"
+            className="w-full cursor-pointer bg-black text-white px-16 py-3 text-sm rounded-lg hover:bg-gray-800 transition-all transform hover:scale-105 active:scale-95 mt-6"
           >
             PLACE ORDER
           </button>

@@ -7,6 +7,14 @@ const RelatedProducts = ({ category }) => {
   const { products } = useContext(ShopContext);
   const [related, setRelated] = useState([]);
 
+  const handleAddToCart = () => {
+    // Scroll to the top smoothly
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Navigate to the Cart page
+    // navigate("/cart");
+  };
+
   useEffect(() => {
     if (products.length > 0) {
       const filteredProducts = products
@@ -82,7 +90,7 @@ const RelatedProducts = ({ category }) => {
                   </div>
 
                   {/* Add to Cart Button */}
-                  <button className="mt-4 w-full bg-[#6F4D38] text-white py-2 rounded-md font-medium transition hover:bg-gray-800">
+                  <button   onClick={handleAddToCart} className="mt-4 w-full bg-[#6F4D38] text-white cursor-pointer py-2 rounded-md font-medium transition hover:bg-gray-800">
                     Add to Cart 🛒
                   </button>
                 </div>

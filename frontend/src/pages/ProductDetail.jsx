@@ -178,24 +178,22 @@ const ProductDetail = () => {
           <div className="flex gap-4 mt-6">
             <button
               onClick={() => addToCart(productData._id)}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               Add to Cart
             </button>
-            <button className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition">
-              Buy Now
-            </button>
+            
           </div>
           <div className="flex flex-row items-center gap-2">
             <p
               onClick={() => handleShare(productData.name, productUrl)}
-              className="text-lg text-gray-400 font-medium font-serif hover:text-blue-600"
+              className="text-lg text-gray-400 font-medium cursor-pointer font-serif hover:text-blue-600"
             >
               Share This Product
             </p>
             <button
               onClick={() => handleShare(productData.name, productData._id)}
-              className="flex items-center gap-2 text-gray-600
+              className="flex items-center cursor-pointer gap-2 text-gray-600
               hover:text-blue-600"
             >
               <GiShare className="text-xl" />

@@ -73,7 +73,7 @@ const placeOrder = async (req, res) => {
 // Place Order - Razorpay Method
 const placeOrderRazorpay = async (req, res) => {
   try {
-    const { userId, items, amount, address, couponCode, discount } = req.body;
+    const { userId, items, amount, address, couponCode, discount ,referralCode} = req.body;
 
     if (!items || items.length === 0) {
       return res.json({
@@ -93,6 +93,7 @@ const placeOrderRazorpay = async (req, res) => {
       payment: false,
       date: Date.now(),
       couponCode,
+      referralCode,
       discount: discount || 0,
     };
 

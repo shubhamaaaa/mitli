@@ -8,13 +8,12 @@ const Sidebar = () => {
       {/* Navigation Menu */}
       <nav className="flex flex-col mt-6 space-y-2">
         {[
-          { to: "/dashboard", icon: assets.dashboard, label: "Dashboard" },
           { to: "/add", icon: assets.add_icon, label: "Add Items" },
           { to: "/list", icon: assets.order_icon, label: "List Items" },
           { to: "/orders", icon: assets.order_icon, label: "Order Items" },
           { to: "/contacts", icon: assets.contact, label: "Contacts" },
           { to: "/subscriber", icon: assets.subscription, label: "Subscriptions" },
-          { to: "/refreels", icon: assets.subscription, label: "Subscriptions" },
+          { to: "/refreels", icon: assets.subscription, label: "ReferralCount" },
         ].map((item, index) => (
           <NavLink
             key={index}

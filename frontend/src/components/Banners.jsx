@@ -2,32 +2,42 @@ import React, { useState, useEffect, useRef } from "react";
 import { assets } from "../assets/assets";
 
 const Banners = () => {
-  const images = [assets.B2, assets.B3]; 
+  const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef(null); 
+  const intervalRef = useRef(null);
 
- 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  
+  const updateImages = () => {
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      setImages([assets.banner2, assets.banner1]); 
+    } else {
+      setImages([assets.B2, assets.B3]); 
+    }
   };
 
- 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
- 
   useEffect(() => {
+    updateImages(); 
+
+    
+    const handleResize = () => updateImages();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (images.length === 0) return;
+    
     intervalRef.current = setInterval(() => {
-      handleNext();
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000);
 
     return () => clearInterval(intervalRef.current);
-  }, []);
+  }, [images]);
 
   return (
     <div className="relative w-full mx-auto overflow-hidden h-full">
-      
       <div
         className="relative w-full h-full flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -41,13 +51,6 @@ const Banners = () => {
           />
         ))}
       </div>
-
-      {/* Left Arrow */}
-     
-
-      {/* Right Arrow */}
-      
-      
     </div>
   );
 };

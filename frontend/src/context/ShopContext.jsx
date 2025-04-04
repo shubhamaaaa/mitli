@@ -8,7 +8,7 @@ export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
   const currency = "₹";
-  const delivery_fee = 10;
+  const delivery_fee = 0;
   const [products, setProducts] = useState([]);
   const [token, setToken] = useState("");
   const [cartItems, setCartItems] = useState({});
@@ -22,6 +22,20 @@ const ShopContextProvider = (props) => {
   
     if (!token) {
       toast.error("Unauthorized! Please log in first.");
+      return;
+    }
+
+    const tokenParts = token.split(".");
+    if (tokenParts.length !== 3) {
+      toast.error("Invalid session. Please login again.");
+      return;
+    }
+
+    const decodedPayload = JSON.parse(atob(tokenParts[1]));
+    const userId = decodedPayload.id;
+
+    if (!userId) {
+      toast.error("User identification failed. Please login again.");
       return;
     }
 
@@ -54,7 +68,7 @@ const ShopContextProvider = (props) => {
       try {
         await axios.post(
           "http://localhost:3000/api/cart/add",
-          { itemId },
+          { itemId,userId },
           config
         );
       } catch (error) {
@@ -168,23 +182,36 @@ const ShopContextProvider = (props) => {
 
   const getUserCart = async () => {
     try {
-      const token = localStorage.getItem("token");
-  
-      if (!token) {
-        toast.error("Unauthorized! Please log in first.");
-        return;
-      }
-  
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      };
-  
+         const token = localStorage.getItem("token");
+           
+           if (!token) {
+             toast.error("Please login to view your orders");
+             return;
+           }
+     
+           const tokenParts = token.split(".");
+           if (tokenParts.length !== 3) {
+             toast.error("Invalid session. Please login again.");
+             return;
+           }
+     
+           const decodedPayload = JSON.parse(atob(tokenParts[1]));
+           const userId = decodedPayload.id;
+     
+           if (!userId) {
+             toast.error("User identification failed. Please login again.");
+             return;
+           }
+     
+           const config = {
+             headers: {
+               "Content-Type": "application/json",
+               Authorization: `Bearer ${token}`,
+             },
+           };
       const response = await axios.post(
         "http://localhost:3000/api/cart/get",
-        {},
+        { userId },
         config
       );
   

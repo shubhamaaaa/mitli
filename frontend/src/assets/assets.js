@@ -10,13 +10,16 @@ import Contactsus from './Contactsus.jpg'
 import SignUp from './SignUp.jpg'
 import Login from './Login.jpg'
 import MITLIFINALLOGO from './MITLIFINALLOGO.png'
-
-
+import banner1 from './banner1.jpg'
+import banner2 from './banner2.jpg'
+import aboutuss from './aboutuss.jpg'
+import Contactus from './Contactus.jpg'
 
 
 
 export const assets={
-    razorpay_logo,B1,footer,B2,B3,Aboutus,Contactsus,SignUp,Login,MITLIFINALLOGO
+    razorpay_logo,B1,footer,B2,B3,Aboutus,Contactsus,SignUp,Login,MITLIFINALLOGO,banner1,banner2,
+    aboutuss,Contactus
 }
 
 export const products = [

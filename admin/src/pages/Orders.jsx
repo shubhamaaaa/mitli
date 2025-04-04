@@ -26,6 +26,7 @@ const Orders = ({ token }) => {
   }
 
   const statusHandler = async (event, orderId, referralCode) => {
+    console.log(referralCode);
     try {
       const newstatus = event.target.value;
 
