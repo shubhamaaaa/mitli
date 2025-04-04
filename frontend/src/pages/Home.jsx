@@ -1,6 +1,6 @@
 import React from 'react'
 import Banners from '../components/Banners'
-import Product from '../components/product'
+import Product from '../components/Product'
 import Bannerss from '../components/Bannerss'
 import Feature from '../components/Feauture'
 import Newsletter from '../components/Newsletter'
