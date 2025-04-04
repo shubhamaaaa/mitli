@@ -163,7 +163,7 @@ const ShopContextProvider = (props) => {
   const getProductsData = async () => {
     try {
       const response = await axios.get(
-        "http://mitli.in//api/product/list"
+        "http://103.160.107.134:3000/api/product/list"
       );
       if (response.data.success) {
         setProducts(response.data.products);
