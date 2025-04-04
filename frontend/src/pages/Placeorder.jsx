@@ -45,7 +45,7 @@ const Placeorder = () => {
     const storedReferralCode = localStorage.getItem("referralCode");
     if (storedReferralCode) {
       setReferralCode(storedReferralCode);
-      setReferralDiscount(50); // Apply ₹50 referral discount automatically
+      setReferralDiscount(1800); // Apply ₹50 referral discount automatically
     }
   }, []);
 
