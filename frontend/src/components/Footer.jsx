@@ -8,11 +8,10 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 mb-8">
           {[
-            { id: "87285", link: "https://www.facebook.com" },
+            { id: "87285", link: "https://www.facebook.com/share/1AJSD8cgrU/" },
+            { id: "62852", link: "https://www.youtube.com" },
+            { id: "85140", link: "https://www.instagram.com/mitli777?igsh=MXVuOTBnbHh4NGl5dA==" },
             { id: "60014", link: "https://www.twitter.com" },
-            { id: "11101", link: "https://www.instagram.com" },
-            { id: "Iatym1CIDVkh", link: "https://www.linkedin.com" },
-            { id: "Y2GfpkgYNp42", link: "https://www.youtube.com" },
           ].map(({ id, link }) => (
             <a key={id} href={link} target="_blank" rel="noopener noreferrer">
               <img
