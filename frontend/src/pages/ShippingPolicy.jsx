@@ -35,7 +35,7 @@ const ShippingPolicy = () => {
           <h2 className="text-xl font-semibold text-gray-700 mb-2">Delivery Issues</h2>
           <p className="text-gray-600">If you experience any issues with your delivery, don't hesitate to get in touch with our customer service team:</p>
           <p className="text-gray-600 mt-2"><strong>Phone:</strong> 9717199937</p>
-          <p className="text-gray-600"><strong>Email:</strong> <a href="mailto:info@mitli.in" className="text-blue-600 hover:underline">info@mitli.in</a></p>
+          <p className="text-gray-600"><strong>Email:</strong> <a href="mailto:mitli.enterprises01@gmail.com" className="text-blue-600 hover:underline">mitli.enterprises01@gmail.com</a></p>
         </div>
 
         <p className="text-center text-gray-600 font-semibold">We appreciate your patience and support. Happy shopping!</p>
