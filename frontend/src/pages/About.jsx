@@ -80,8 +80,8 @@ const About = () => {
               <h2 className="text-3xl font-bold text-[#6F4D38] mb-4">Get in Touch</h2>
               <p className="text-gray-700">
                 📩 <strong>Email:</strong>{" "}
-                <a href="mailto:info@mitli.in" className="text-blue-600 hover:underline font-semibold">
-                  info@mitli.in
+                <a href="mailto:mitli.enterprises01@gmail.com" className="text-blue-600 hover:underline font-semibold">
+                  mitli.enterprises01@gmail.com
                 </a>
               </p>
               <p className="text-gray-700 mt-3">
