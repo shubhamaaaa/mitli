@@ -58,7 +58,7 @@ const ProductDetail = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/auth/getuser?productId=${productId}`,
+        `https://mitli.in/api/auth/getuser?productId=${productId}`,
         {
           method: "GET",
           headers: {
