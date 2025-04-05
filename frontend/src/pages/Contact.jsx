@@ -107,7 +107,7 @@ const Contact = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Details</h2>
             <div className="space-y-4 text-gray-700">
               <p><strong>Email:</strong> <a href="mailto:info@mitli.in" className="text-blue-600 hover:underline">mitli.enterprises01@gmail.com</a></p>
-              <p><strong>Phone:</strong> +91 98765 43210</p>
+              <p><strong>Phone:</strong> +91 9717199937</p>
               <p><strong>Address:</strong> Mitli Enterprises Pvt. Ltd. 44, 2nd Floor Regal Building, Connaught Place New Delhi -110001 India</p>
             </div>
           </div>
