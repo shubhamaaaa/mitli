@@ -67,7 +67,7 @@ const ShopContextProvider = (props) => {
     if (token) {
       try {
         await axios.post(
-          "http://localhost:3000/api/cart/add",
+          "https://mitli.in/api/cart/add",
           { itemId,userId },
           config
         );
@@ -119,7 +119,7 @@ const ShopContextProvider = (props) => {
     if (token) {
       try {
         await axios.post(
-          "http://localhost:3000/api/cart/update",
+          "https://mitli.in/api/cart/update",
           { itemId, quantity },
          config
         );
@@ -163,7 +163,7 @@ const ShopContextProvider = (props) => {
   const getProductsData = async () => {
     try {
       const response = await axios.get(
-        "http://103.160.107.134:3000/api/product/list"
+        "https://mitli.in/api/product/list"
       );
       if (response.data.success) {
         setProducts(response.data.products);
@@ -210,7 +210,7 @@ const ShopContextProvider = (props) => {
              },
            };
       const response = await axios.post(
-        "http://localhost:3000/api/cart/get",
+        "https://mitli.in/api/cart/get",
         { userId },
         config
       );
