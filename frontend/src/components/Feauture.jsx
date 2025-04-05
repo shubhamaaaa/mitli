@@ -12,7 +12,7 @@ const features = [
 
 const Feature = () => {
   return (
-    <section className="bg-white shadow-xl rounded-lg p-12 border-l-4 border-indigo-600">
+    <section className="bg-white sm:shadow-xl shadow-none sm:rounded-lg rounded-none p-12 border-l-4 border-indigo-600">
       <motion.h2 
         className="text-4xl font-extrabold text-[#6F4D38] mb-10 text-center"
         initial={{ opacity: 0, y: -20 }}
