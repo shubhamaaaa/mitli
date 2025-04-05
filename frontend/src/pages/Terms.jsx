@@ -62,7 +62,7 @@ const Terms = () => {
         <h2 className="text-xl font-semibold">8. Contact Us</h2>
         <p className="text-gray-600 mt-2">If you have any questions, contact us:</p>
         <ul className="text-gray-600 mt-2">
-          <li>Email: info@mitli.in</li>
+          <li>Email: mitli.enterprises01@gmail.com</li>
           <li>Phone: 9717199937</li>
           <li>Address: 44, 2nd Floor, Regal Building, Connaught Place, New Delhi - 110001, India</li>
         </ul>
