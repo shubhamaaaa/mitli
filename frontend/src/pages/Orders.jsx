@@ -40,7 +40,7 @@ const Orders = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:3000/api/order/userorders',
+        'https://mitli.in/api/order/userorders',
         { userId }, // Send userId in the request body
         config
       );
