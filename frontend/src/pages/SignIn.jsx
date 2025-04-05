@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
   const {token,setToken,navigate}= useContext(ShopContext);
   const [email, setEmail] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState('');
  
 
@@ -102,18 +104,24 @@ const SignIn = () => {
               />
             </div>
 
-            <div>
-              <label className="block text-gray-700 text-sm font-medium">Password</label>
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-                required
-                className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition shadow-sm"
-              />
-            </div>
+              <div className="relative">
+          <label className="block text-gray-700 text-sm font-medium">Password</label>
+         <input
+          type={showPassword ? 'text' : 'password'}
+          name="password"
+         value={password}
+         onChange={(e) => setPassword(e.target.value)}
+       placeholder="Enter your password"
+      required
+     className="w-full mt-1 p-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition shadow-sm"
+     />
+  <div
+    className="absolute right-3 top-12 transform -translate-y-1/2 cursor-pointer text-gray-500"
+    onClick={() => setShowPassword(!showPassword)}
+  >
+    {showPassword ? <FaEyeSlash /> : <FaEye />}
+  </div>
+</div>
 
             <button
               type="submit"
