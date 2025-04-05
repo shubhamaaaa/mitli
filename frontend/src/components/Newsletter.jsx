@@ -14,7 +14,7 @@ const Newsletter = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/subscribe", { email });
+      const response = await axios.post("https://mitli.in/api/subscribe", { email });
       alert(response.data.message);
       setEmail("");
       setSubscribed(true);
