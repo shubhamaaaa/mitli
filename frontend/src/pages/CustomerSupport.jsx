@@ -15,7 +15,7 @@ const CustomerSupport = () => {
         {/* Contact Information */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-gray-700 mb-2">Contact Information</h2>
-          <p className="text-gray-600 mb-2"><strong>Email Support:</strong> <a href="mailto:info@mitli.in" className="text-blue-600 hover:underline">info@mitli.in</a></p>
+          <p className="text-gray-600 mb-2"><strong>Email Support:</strong> <a href="mailto:mitli.enterprises01@gmail.com" className="text-blue-600 hover:underline">mitli.enterprises01@gmail.com</a></p>
           <p className="text-gray-600">We aim to respond within 2 business days.</p>
           <p className="text-gray-600 mt-2"><strong>Phone Support:</strong> 9717199937</p>
           <p className="text-gray-600">Available: Monday to Friday, 9 AM - 6 PM IST</p>
