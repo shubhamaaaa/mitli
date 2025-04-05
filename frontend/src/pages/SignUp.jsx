@@ -17,7 +17,7 @@ const SignUp = () => {
     const body = { email, mobile, password };
 
     try {
-      const response = await fetch(`http://localhost:3000${url}`, {
+      const response = await fetch(`https://mitli.in${url}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
