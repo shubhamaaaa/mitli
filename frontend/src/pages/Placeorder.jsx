@@ -73,7 +73,7 @@ const Placeorder = () => {
     try {
       const totalAmount = cartTotal;
       const { data } = await axios.post(
-        "http://localhost:3000/api/coupon/apply",
+        "https://mitli.in/api/coupon/apply",
         { code: couponCode, totalAmount },
         { headers: { token } }
       );
@@ -124,7 +124,7 @@ const Placeorder = () => {
           };
 
           const { data } = await axios.post(
-            "http://localhost:3000/api/order/verifyRazorpay",
+            "https://mitli.in/api/order/verifyRazorpay",
             paymentData,
             { headers: { Authorization: `Bearer ${token}` } }
           );
@@ -180,7 +180,7 @@ const Placeorder = () => {
       console.log("Sending Order Data:", requestData);
 
       const response = await axios.post(
-        "http://localhost:3000/api/order/place",
+        "https://mitli.in/api/order/place",
         requestData,
         config
       );
@@ -274,7 +274,7 @@ const Placeorder = () => {
           };
 
           const responseRazorpay = await axios.post(
-            "http://localhost:3000/api/order/razorpay",
+            "https://mitli.in/api/order/razorpay",
             orderData,
             config
           );
