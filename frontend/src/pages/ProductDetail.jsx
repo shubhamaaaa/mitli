@@ -207,22 +207,22 @@ const ProductDetail = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 p-6 bg-[#6F4D38] rounded-lg shadow-md">
         {[
           {
-            icon: "https://img.icons8.com/?size=100&id=68930&format=png&color=000000",
+            icon: "https://img.icons8.com/?size=100&id=74519&format=png&color=6F4D38",
             title: "Safe Payment",
             desc: "Pay with the world's most trusted payment methods.",
           },
           {
-            icon: "https://img.icons8.com/?size=100&id=BXm2CrmeRAo4&format=png&color=000000",
+            icon: "https://img.icons8.com/?size=100&id=ggyvmen05SzI&format=png&color=6F4D38",
             title: "Confidence",
             desc: "Your purchase and personal data are secure.",
           },
           {
-            icon: "https://img.icons8.com/?size=100&id=487&format=png&color=000000",
+            icon: "https://img.icons8.com/?size=100&id=487&format=png&color=6F4D38",
             title: "Worldwide Delivery",
             desc: "FREE & fast shipping to over 200+ countries.",
           },
           {
-            icon: "https://img.icons8.com/?size=100&id=NBMF1Ak8RoFz&format=png&color=000000",
+            icon: "https://img.icons8.com/?size=100&id=NBMF1Ak8RoFz&format=png&color=6F4D38",
             title: "Hotline Support",
             desc: "Call us anytime at +91-9717199937.",
           },
