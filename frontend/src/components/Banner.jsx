@@ -13,16 +13,9 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-[#6F4D38] text-white px-5 md:px-10 py-2 text-center md:text-left">
+    <div className="flex flex-row items-center justify-between bg-[#6F4D38] text-white px-5 md:px-10 py-2 text-center md:text-left">
       {/* Contact Section */}
-      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-0">
-        <img
-          className="w-5 md:w-6"
-          src="https://img.icons8.com/?size=100&id=Fm3frqO6UcAG&format=png&color=FFFFFF"
-          alt="Phone Icon"
-        />
-        <p className="text-xs md:text-sm font-medium">+91-9717199937</p>
-      </div>
+      
 
       {/* Express Shipping */}
       <p className="text-xs md:text-sm font-semibold tracking-wide">Express Shipping</p>
