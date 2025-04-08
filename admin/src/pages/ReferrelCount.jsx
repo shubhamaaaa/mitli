@@ -11,7 +11,7 @@ const ReferrelCount = () => {
 
     const fetchuserRefreels = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/auth/alluser");
+            const response = await axios.get("https://mitli.in/api/auth/alluser");
             console.log("API Response:", response.data);  
             
             
