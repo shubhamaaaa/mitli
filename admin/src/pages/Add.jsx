@@ -41,7 +41,7 @@ const Add = ({ token }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/product/add",
+        "https://mitli.in/api/product/add",
         formDataToSend,
         {
           headers: { token, "Content-Type": "multipart/form-data" },
