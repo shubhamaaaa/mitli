@@ -13,7 +13,7 @@ const Orders = ({ token }) => {
       return null
     }
     try {
-      const response = await axios.post('http://localhost:3000/api/order/list', {}, { headers: { token } })
+      const response = await axios.post('https://mitli.in/api/order/list', {}, { headers: { token } })
       if (response.data.success) {
         setOrders(response.data.orders.reverse())
       } else {
@@ -30,11 +30,11 @@ const Orders = ({ token }) => {
     try {
       const newstatus = event.target.value;
 
-      const response = await axios.post('http://localhost:3000/api/order/status', { orderId, status: newstatus }, { headers: { token } })
+      const response = await axios.post('https://mitli.in/api/order/status', { orderId, status: newstatus }, { headers: { token } })
 
       if (response.data.success) {
 
-        const referralresponse = await axios.post('http://localhost:3000/api/order/referralUpated', { referralCode, status: newstatus }, { headers: { token } })
+        const referralresponse = await axios.post('https://mitli.in/api/order/referralUpated', { referralCode, status: newstatus }, { headers: { token } })
         if (referralresponse.data.success) {
           await fetchAllOrders();
         }
