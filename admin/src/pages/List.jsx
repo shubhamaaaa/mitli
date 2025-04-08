@@ -8,7 +8,7 @@ const List = ({token}) => {
   const [list,setList]=useState([])
   const fetchlist=async()=>{
     try {
-      const response=await axios.get('http://localhost:3000/api/product/list')
+      const response=await axios.get('https://mitli.in/api/product/list')
       if (response.data.success) {
         setList(response.data.products)
       }else{
@@ -23,7 +23,7 @@ const List = ({token}) => {
 
   const removeProduct=async(id)=>{
    try {
-    const response=await axios.post( 'http://localhost:3000/api/product/remove',{id},{headers:{token}})
+    const response=await axios.post( 'https://mitli.in/api/product/remove',{id},{headers:{token}})
     if (response.data.success) {
       toast.success(response.data.message)
       await fetchlist()
