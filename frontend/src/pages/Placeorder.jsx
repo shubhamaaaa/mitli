@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Placeorder = () => {
-  const [method, setMethod] = useState("cod");
+  const [method, setMethod] = useState("razorpay");
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [referralCode, setReferralCode] = useState(""); // Referral code from localStorage (if any)
@@ -432,7 +432,7 @@ const Placeorder = () => {
               <img className="h-6" src={assets.razorpay_logo} alt="Razorpay" />
             </div>
             <div
-              onClick={() => setMethod("cod")}
+             // onClick={() => setMethod("cod")}
               className={`flex items-center gap-3 border p-3 rounded-lg cursor-pointer transition-all ${
                 method === "cod"
                   ? "border-black shadow-md bg-gradient-to-r from-gray-50 to-gray-100"
